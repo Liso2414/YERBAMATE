@@ -39,26 +39,30 @@
             border-bottom: 2px solid yellow;
         }
         body.high-contrast .navbar-brand, body.high-contrast .nav-link {
-            color: yellow !important;
+            color: rgb(0, 0, 0) !important;
         }
     </style>
-    <script>
-        function toggleContrast() {
-            document.body.classList.toggle('high-contrast');
-        }
+  <script>
+    function toggleContrast() {
+        document.body.classList.toggle('high-contrast');
+    }
 
-        function validateForm() {
-            var name = document.forms["contactForm"]["name"].value;
-            var email = document.forms["contactForm"]["email"].value;
-            var phone = document.forms["contactForm"]["phone"].value;
-            var message = document.forms["contactForm"]["message"].value;
+    function validateForm() {
+        var name = document.forms["contactForm"]["name"].value;
+        var email = document.forms["contactForm"]["email"].value;
+        var phone = document.forms["contactForm"]["phone"].value;
+        var message = document.forms["contactForm"]["message"].value;
 
-            if (name == "" || email == "" || phone == "" || message == "") {
-                alert("Todos los campos son obligatorios.");
-                return false;
-            }
+        if (name == "" || email == "" || phone == "" || message == "") {
+            alert("Todos los campos son obligatorios.");
+            return false; 
+        } else {
+            alert("El formulario se ha enviado correctamente.");
+            return true; 
         }
-    </script>
+    }
+</script>
+
 </head>
 <body>
 <header>
@@ -78,11 +82,12 @@
                             Productos
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="productos.html">Mate</a></li>
-                            <li><a class="dropdown-item" href="#">Termo</a></li>
+                            <li><a class="dropdown-item" href="categoria.html?section=mate" data-section="mate">Mate</a></li>
+                            <li><a class="dropdown-item" href="categoria.html?section=termo" data-section="termo">Termo</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Combo Termo & Mate</a></li>
+                            <li><a class="dropdown-item" href="categoria.html?section=combo" data-section="Yerba">Yerba</a></li>
                         </ul>
+
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" aria-current="page" href="#nosotros">Nosotros</a>
@@ -105,20 +110,16 @@
 
 <section class="container-fluid mt-5">
     <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-        <ol class="carousel-indicators">
-            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"></li>
-            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"></li>
-            <li data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"></li>
-        </ol>
+       
         <div class="carousel-inner">
             <div class="carousel-item active">
-                <img src="/cuarteto/Imagenes/jorge-zapata-ca7YfP8eUj0-unsplash.jpg" class="d-block w-100" alt="Slide 1">
+                <img src="./Imagenes/jorge-zapata-ca7YfP8eUj0-unsplash.jpg" class="d-block w-100" alt="Slide 1">
             </div>
             <div class="carousel-item">
-                <img src="/cuarteto/Imagenes/michal-bozek-aOFGgG816ac-unsplash.jpg" class="d-block w-100" alt="Slide 2">
+                <img src="./Imagenes/jeffrey-brandjes-l4VPAybei94-unsplash.jpg" class="d-block w-100" alt="Slide 2">
             </div>
             <div class="carousel-item">
-                <img src="/cuarteto/Imagenes/Yerba.png" class="d-block w-100" alt="Slide 3">
+                <img src="./Imagenes/Yerba.png" class="d-block w-100" alt="Slide 3">
             </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-bs-slide="prev">
@@ -155,7 +156,7 @@
     <div class="row justify-content-center">
         <div class="col-md-3">
             <div class="card">
-                <img src="/cuarteto/Imagenes/jorge-zapata-ca7YfP8eUj0-unsplash.jpg" class="card-img-top" alt="mate">
+                <img src="./Imagenes/jorge-zapata-ca7YfP8eUj0-unsplash.jpg" class="card-img-top" alt="mate">
                 <div class="card-body">
                     <h5 class="card-title">Mate</h5>
                     <p class="card-text">Disfruta de un mate único con nuestros productos de alta calidad, diseñados para cada sorbo.</p>
@@ -165,7 +166,7 @@
         </div>
         <div class="col-md-3">
             <div class="card">
-                <img src="/cuarteto/Imagenes/128394467-frasco-con-taza-sobre-una-mesa-de-madera-sobre-el-fondo-de-montañas-nevadas-en-invierno.jpg" class="card-img-top" alt="termo">
+                <img src="./Imagenes/128394467-frasco-con-taza-sobre-una-mesa-de-madera-sobre-el-fondo-de-montañas-nevadas-en-invierno.jpg" class="card-img-top" alt="termo">
                 <div class="card-body">
                     <h5 class="card-title">Termo</h5>
                     <p class="card-text">Nuestros termos mantienen tu bebida a la temperatura ideal, garantizando calidad y durabilidad.</p>
@@ -175,9 +176,9 @@
         </div>
         <div class="col-md-3">
             <div class="card">
-                <img src="/cuarteto/Imagenes/yerba2.jpeg" class="card-img-top" alt="yerba mate">
+                <img src="./Imagenes/Yerba.png" class="card-img-top" alt="yerba mate">
                 <div class="card-body">
-                    <h5 class="card-title">YERBA MATE</h5>
+                    <h5 class="card-title">Yerba Mate</h5>
                     <p class="card-text">Nuestra yerba mate premium ofrece el sabor auténtico y la pureza que los amantes del mate buscan.</p>
                     <a href="#" class="btn btn-primary">YERBA</a>
                 </div>
